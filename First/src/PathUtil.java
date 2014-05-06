@@ -40,10 +40,9 @@ public class PathUtil {
 
     public static void main(String[] args) {
         System.out.println(reduce_file_path("/") + " == /");
-        System.out.println(reduce_file_path("/Ogi/hates/me/./././") + " == /Ogi/hates/me");
-        System.out.println(reduce_file_path("/Ogi/hates/me/../././") + " == /Ogi/hates");
-        System.out.println(reduce_file_path("/Ogi/hates/me/../.././") + " == /Ogi");
-        System.out.println(reduce_file_path("/Ogi/hates/me/../../loves/me/") + " == /Ogi/loves/me");
-    }
+        System.out.println(reduce_file_path("/etc/../etc/../etc/../");
+        System.out.println(reduce_file_path("");
+        reduce_file_path("//////////////")
+        
 
 }
