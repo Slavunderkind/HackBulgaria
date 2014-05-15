@@ -3,38 +3,51 @@ import java.util.ArrayList;
 public class MagicSquare {
 	public static Boolean magic_square(ArrayList<ArrayList<Integer>> matrix) {
 
-		int rows = 0;
-		int columbs = 0;
-		int rowSum = 0;
-		int columbSum = 0;
+		ArrayList<Integer> columbs = new ArrayList<Integer>();
+		ArrayList<Integer> columbSum = new ArrayList<Integer>();
+		ArrayList<Integer> rowSum = new ArrayList<Integer>();
 		int mainDiagonal = 0;
 		int backDiagonal = 0;
-		int diagonalSum = 0;
-
+		boolean result = false;
+		boolean rowIsEqualsToColumb = false;
+		boolean equalDiagonals = false;
 		for (int i = 0; i < matrix.size(); i++) {
+			int rows = 0;
+			int sum = 0;
+			int counter = 0;
+			columbSum.clear();
 			for (int j = 0; j < matrix.size(); j++) {
 				rows += matrix.get(i).get(j);
-				rowSum += matrix.get(i).get(j);
-				columbs += matrix.get(i).get(j);
-				columbSum += matrix.get(j).get(i);
+				columbSum.add(counter, matrix.get(i).get(j));
+				counter++;
+
 				if (i == j) {
 					backDiagonal += matrix.get(i).get((matrix.size() - 1) - j);
 					mainDiagonal += matrix.get(i).get(j);
 				}
+
 			}
-			if (rows == rowSum) {
-				rows = 0;
+			rowSum.add(i, rows);
+			for (int k = 0; k < matrix.size(); k++) {
+				sum += columbSum.get(k);
+			}
+			columbs.add(i, sum);
+
+		}
+		for (int p = 0; p < matrix.size(); p++) {
+			if (columbs.get(p) == rowSum.get(p)) {
+				rowIsEqualsToColumb = true;
 			}
 
 		}
-
-		diagonalSum = mainDiagonal + backDiagonal;
-		System.out.println(rowSum);
-		System.out.println(columbSum);
-		System.out.println(mainDiagonal);
-		System.out.println(backDiagonal);
-
-		return ((rowSum == columbSum) && (columbSum == diagonalSum) && (diagonalSum == rowSum));
+		if (mainDiagonal == backDiagonal) {
+			equalDiagonals = true;
+		}
+		if ((equalDiagonals) && (rowIsEqualsToColumb)
+				&& (mainDiagonal == rowSum.get(0))) {
+			result = true;
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {
@@ -42,7 +55,6 @@ public class MagicSquare {
 		ArrayList<Integer> b = new ArrayList<Integer>();
 		ArrayList<Integer> c = new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>> m = new ArrayList<ArrayList<Integer>>();
-		ArrayList<Integer> columbList = new ArrayList<Integer>();
 		a.add(4);
 		a.add(9);
 		a.add(2);
