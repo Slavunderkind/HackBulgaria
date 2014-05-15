@@ -42,6 +42,7 @@ public class GoldbachConjecture {
 	public static void main(String[] args) {
 
 		System.out.println(goldbach(10));
+		System.out.println(goldbach(500));
 	}
 
 }
