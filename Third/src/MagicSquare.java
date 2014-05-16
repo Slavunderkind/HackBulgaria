@@ -34,10 +34,11 @@ public class MagicSquare {
 			columbs.add(i, sum);
 
 		}
-		for (int p = 0; p < matrix.size(); p++) {
-			if (columbs.get(p) == rowSum.get(p)) {
+		for (int index = 0; index < matrix.size(); index++) {
+			if (columbs.get(index) == rowSum.get(index)) {
 				rowIsEqualsToColumb = true;
-			}
+			} else
+				rowIsEqualsToColumb = false;
 
 		}
 		if (mainDiagonal == backDiagonal) {
@@ -51,6 +52,7 @@ public class MagicSquare {
 	}
 
 	public static void main(String[] args) {
+
 		ArrayList<Integer> a = new ArrayList<Integer>();
 		ArrayList<Integer> b = new ArrayList<Integer>();
 		ArrayList<Integer> c = new ArrayList<Integer>();
