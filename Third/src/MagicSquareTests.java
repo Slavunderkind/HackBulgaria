@@ -9,8 +9,10 @@ public class MagicSquareTests {
 		boolean expected = false;
 		ArrayList<ArrayList<Integer>> matrix = new ArrayList<ArrayList<Integer>>();
 		Boolean actual = new Boolean(MagicSquare.magic_square(matrix));
-		if (expected == actual)
-			;
+		if (expected == actual) {
+			assert (true);
+		} else
+			assert (false);
 
 	}
 
@@ -34,8 +36,10 @@ public class MagicSquareTests {
 		matrix.add(b);
 		matrix.add(c);
 		Boolean actual = new Boolean(MagicSquare.magic_square(matrix));
-		if (expected == actual)
-			;
+		if (expected == actual) {
+			assert (true);
+		} else
+			assert (false);
 
 	}
 
@@ -59,13 +63,15 @@ public class MagicSquareTests {
 		matrix.add(b);
 		matrix.add(c);
 		Boolean actual = new Boolean(MagicSquare.magic_square(matrix));
-		if (expected == actual)
-			;
+		if (expected == actual) {
+			assert (true);
+		}
+		assert (false);
 
 	}
-	
+
 	@Test
-	public void mustBeTrue () {
+	public void mustBeTrue() {
 		boolean expected = true;
 		ArrayList<ArrayList<Integer>> matrix = new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> a = new ArrayList<Integer>();
@@ -84,9 +90,10 @@ public class MagicSquareTests {
 		matrix.add(b);
 		matrix.add(c);
 		Boolean actual = new Boolean(MagicSquare.magic_square(matrix));
-		if (expected == actual)
-			;
+		if (expected == actual) {
+			assert (true);
+		} else
+			assert (false);
 	}
 
 }
-

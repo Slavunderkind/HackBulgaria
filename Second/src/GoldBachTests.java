@@ -11,8 +11,7 @@ public class GoldBachTests {
 		ArrayList<Integer> expected = new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>> actual = new ArrayList<ArrayList<Integer>>(
 				GoldbachConjecture.goldbach(0));
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 	}
 
 	@Test
@@ -20,8 +19,7 @@ public class GoldBachTests {
 		ArrayList<Integer> expected = new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>> actual = new ArrayList<ArrayList<Integer>>(
 				GoldbachConjecture.goldbach(1));
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 
 	}
 
@@ -38,18 +36,20 @@ public class GoldBachTests {
 		expected.add(second);
 		ArrayList<ArrayList<Integer>> actual = new ArrayList<ArrayList<Integer>>();
 		actual = GoldbachConjecture.goldbach(10);
-		if (expected.equals(actual))
-			;
+		assertEquals(expected, actual);
 
 	}
 
 	@Test
 	public void primeNumber() {
-
-		if (GoldbachConjecture.isPrime(13))
-			;
-		if (GoldbachConjecture.isPrime(100))
-			;
+		if (GoldbachConjecture.isPrime(13)) {
+			assert (true);
+		} else
+			assert (false);
+		if (GoldbachConjecture.isPrime(100)) {
+			assert (true);
+		} else
+			assert (false);
 
 	}
 

@@ -22,8 +22,10 @@ public class PathTests {
 	public void emptyList() {
 		String actual = Path.reduce_file_path("");
 		String expected = "/";
-		if (actual == expected)
-			;
+		if (actual == expected) {
+			assert (true);
+		} else
+			assert (false);
 
 	}
 
@@ -31,8 +33,7 @@ public class PathTests {
 	public void addAllPathWithoutLastSlash() {
 		String actual = new String(Path.reduce_file_path("/path/slav/"));
 		String expected = new String("/path/slav");
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 
 	}
 
@@ -41,8 +42,7 @@ public class PathTests {
 		String actual = new String(
 				Path.reduce_file_path("/path/bla//////bla////bla/slav////////"));
 		String expected = new String("/path/bla/bla/bla/slav");
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 
 	}
 
@@ -51,8 +51,7 @@ public class PathTests {
 		String actual = new String(
 				Path.reduce_file_path("/home/Pictures/MyPictures/../"));
 		String expected = new String("/home/Pictures");
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 
 	}
 
@@ -60,8 +59,7 @@ public class PathTests {
 	public void sameDirectory() {
 		String actual = new String(Path.reduce_file_path("/home/Pictures/././"));
 		String expected = new String("/home/Pictures");
-		if (actual.equals(expected))
-			;
+		assertEquals(expected, actual);
 
 	}
 
@@ -71,8 +69,10 @@ public class PathTests {
 		String firstSymbol = "";
 		firstSymbol = String.valueOf(path.charAt(0));
 		if (firstSymbol != "/") {
+			assert (true);
 			System.out.println("ERROR! WRONG INPUT");
-		}
+		} else
+			assert (false);
 
 	}
 
