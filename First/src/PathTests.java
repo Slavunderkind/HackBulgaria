@@ -21,11 +21,8 @@ public class PathTests {
 	@Test
 	public void emptyList() {
 		String actual = Path.reduce_file_path("");
-		String expected = "/";
-		if (actual == expected) {
-			assert (true);
-		} else
-			assert (false);
+		String expected = "";
+		assertEquals(expected, actual);
 
 	}
 
