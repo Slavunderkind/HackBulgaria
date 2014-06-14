@@ -28,8 +28,7 @@ public class TestSortList {
 		actual.add(2);
 		actual.add(1);
 		actual.add(0);
-		SortList object = new SortList(actual);
-		List<Integer> actualList = new ArrayList<>(object.sort(actual));
+		actualList = (ArrayList<>) SortList.sort(actual));
 		assertTrue (actualList.equals(expected));
 	}
 	
