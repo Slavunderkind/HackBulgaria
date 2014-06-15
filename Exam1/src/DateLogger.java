@@ -7,13 +7,16 @@ public class DateLogger extends Logger {
 		super();
 	}
 
-	public DateLogger(int level) {
+	public DateLogger(int level) throws Exception {
 		super(level);
 
 	}
 
 	@Override
-	public void log(Integer level, String message) {
+	public void log(int level, String message) throws Exception {
+		if (level < 1) {
+			throw new Exception("level is out of range");
+		}
 		DateFormat dateFormatter = new SimpleDateFormat("HH:mm:ss dd.MM.yyyy");
 		Calendar time = Calendar.getInstance();
 		if (level <= this.level) {

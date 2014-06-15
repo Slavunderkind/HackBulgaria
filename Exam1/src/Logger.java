@@ -5,11 +5,14 @@ public class Logger {
 		this.level = 3;
 	}
 
-	public Logger(int LEVEL) {
+	public Logger(Integer LEVEL) throws Exception {
+		if (LEVEL < 1) {
+			throw new Exception("LEVEL is out of range");
+		}
 		this.level = LEVEL;
 	}
 
-	public void log(String message) {
+	public void log(String message)  {
 		int defaultLevel = 3;
 		if (defaultLevel <= this.level) {
 			System.out
@@ -19,7 +22,11 @@ public class Logger {
 
 	}
 
-	public void log(Integer level, String message) {
+	public void log(int level, String message) throws Exception {
+		if (level<1){
+			throw new Exception("level is out of range");
+			
+		}
 		if (level <= this.level) {
 			System.out.println(String.format("%d => %s", level, message));
 
@@ -27,7 +34,10 @@ public class Logger {
 
 	}
 
-	public void setLevel(int newLevel) {
+	public void setLevel(int newLevel)throws Exception {
+		if (newLevel < 1){
+			throw new Exception("newLevel is out of range");
+		}
 		this.level = newLevel;
 
 	}
