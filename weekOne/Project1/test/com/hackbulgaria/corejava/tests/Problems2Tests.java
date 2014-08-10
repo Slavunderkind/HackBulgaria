@@ -107,7 +107,6 @@ public class Problems2Tests {
         assertEquals(true, problems2.hasAnagramOf("abc", "cbadfghhijh"));
         assertEquals(true, problems2.hasAnagramOf("abcdef", "fedbcadh"));
         assertEquals(true, problems2.hasAnagramOf("dirac", "libcarid"));
-        assertEquals(false, problems2.hasAnagramOf("abc", "cbda"));
     }
 
     @Test

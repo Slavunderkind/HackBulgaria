@@ -12,7 +12,27 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public boolean canBalance(int[] array) {
-        // TODO Auto-generated method stub
+        int elem = 0;
+        int leftSum = 0;
+        int rightSum = 0;
+        while (elem < array.length) {
+            for (int i = 0; i < elem; i++) {
+                leftSum += array[i];
+            }
+            for (int j = elem; j < array.length; j++) {
+                rightSum += array[j];
+            }
+            System.out.println("left" + leftSum);
+            System.out.println(rightSum);
+            if (leftSum == rightSum) {
+                return true;
+            }
+            leftSum = 0;
+            rightSum = 0;
+
+            elem++;
+        }
+
         return false;
     }
 
@@ -76,7 +96,10 @@ public class Problems2Impl implements Problems2 {
         for (int i = 1; i < array.length; i++) {
             if (array[i - 1] == array[i]) {
                 counter += 1;
-                index = i;
+
+                if (isOdd(counter)) {
+                    index = i;
+                }
             } else {
                 counter = 1;
             }
@@ -248,8 +271,11 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public String reverseMe(String argument) {
-        // TODO Auto-generated method stub
-        return null;
+        StringBuilder sb = new StringBuilder();
+        for (int i = argument.length() - 1; i >= 0; i--) {
+            sb.append(argument.charAt(i));
+        }
+        return sb.toString();
     }
 
     @Override
