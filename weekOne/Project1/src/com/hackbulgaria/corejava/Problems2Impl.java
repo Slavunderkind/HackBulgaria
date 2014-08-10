@@ -1,22 +1,8 @@
 package com.hackbulgaria.corejava;
 
+import java.util.Arrays;
+
 public class Problems2Impl implements Problems2 {
-
-    public static void main(String[] args) {
-        Problems2Impl some = new Problems2Impl();
-        // System.out.println(some.isOdd(0));
-
-        // System.out.println(some.min(1, 2, 3, 4, 5, 6));
-        // System.out.println(some.pow(2, 42));
-        // System.out.println(some.getPalindromeLength("abc*cba"));
-        // System.out.println(some.getPalindromeLength("taz*zad"));
-        // System.out.println(some.getPalindromeLength("asdf*fdso"));
-        // System.out.println(some.isOdd(9864));
-        // System.out.println(some.copyEveryChar("milen", 3));
-        // System.out.println(some.isPalindrome(5505055));
-        System.out.println(some.isPalindrome(19191));
-
-    }
 
     @Override
     public boolean areAnagrams(String A, String B) {
@@ -69,8 +55,6 @@ public class Problems2Impl implements Problems2 {
         for (int i = 0; i < array.length; i++) {
             result += array[i];
         }
-
-        // TODO Auto-generated method stub
         return result / array.length;
     }
 
@@ -82,8 +66,26 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public int getOddOccurrence(int[] array) {
-        // TODO Auto-generated method stub
-        return 0;
+        int counter = 1;
+        int index = 0;
+        int result = 0;
+        Arrays.sort(array);
+        for (int k = 0; k < array.length; k++) {
+            System.out.println(array[k]);
+        }
+        for (int i = 1; i < array.length; i++) {
+            if (array[i - 1] == array[i]) {
+                counter += 1;
+                index = i;
+            } else {
+                counter = 1;
+            }
+
+            if ((isOdd(counter))) {
+                result = array[index];
+            }
+        }
+        return result;
     }
 
     @Override
@@ -151,20 +153,15 @@ public class Problems2Impl implements Problems2 {
             num /= 10;
             digits++;
         }
-        // System.out.println(digits);
         while (digits > 1) {
             digits--;
-            System.out.println(number);
             if ((number % 10) == (number / pow(10, digits))) {
                 result = true;
-                System.out.println(number);
             } else {
                 return false;
             }
             number /= 10;
-           // System.out.println(result);
         }
-        // System.out.println(number);
 
         return result;
     }
@@ -194,8 +191,9 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public int kthMin(int k, int[] array) {
-        // TODO Auto-generated method stub
-        return 0;
+        Arrays.sort(array);
+
+        return array[k - 1];
     }
 
     @Override
