@@ -8,7 +8,14 @@ public class Problems2Impl implements Problems2 {
 
         // System.out.println(some.min(1, 2, 3, 4, 5, 6));
         // System.out.println(some.pow(2, 42));
-        System.out.println(some.isPalindrome(2222222));
+        // System.out.println(some.getPalindromeLength("abc*cba"));
+        // System.out.println(some.getPalindromeLength("taz*zad"));
+        // System.out.println(some.getPalindromeLength("asdf*fdso"));
+        // System.out.println(some.isOdd(9864));
+        // System.out.println(some.copyEveryChar("milen", 3));
+        // System.out.println(some.isPalindrome(5505055));
+        System.out.println(some.isPalindrome(19191));
+
     }
 
     @Override
@@ -25,8 +32,17 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public String copyEveryChar(String input, int k) {
-        // TODO Auto-generated method stub
-        return null;
+        StringBuilder output = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            int counter = 0;
+
+            while (counter < k) {
+                output.append(input.charAt(i));
+                counter++;
+            }
+
+        }
+        return output.toString();
     }
 
     @Override
@@ -72,8 +88,31 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public int getPalindromeLength(String input) {
-        // TODO Auto-generated method stub
-        return 0;
+        StringBuilder beforeStar = new StringBuilder();
+        StringBuilder afterStar = new StringBuilder();
+        int starIndex = input.indexOf('*');
+        int k = 0;
+        int counter = 0;
+
+        for (int i = 0; i < starIndex; i++) {
+            beforeStar.append(input.charAt(i));
+        }
+        for (int j = starIndex + 1; j < input.length(); j++) {
+            afterStar.append(input.charAt(j));
+        }
+        int end = beforeStar.length();
+        afterStar.reverse();
+        while (k < end) {
+            if (beforeStar.charAt(k) == afterStar.charAt(k)) {
+                counter++;
+            } else {
+                counter = 0;
+            }
+            k++;
+
+        }
+
+        return counter;
     }
 
     @Override
@@ -106,18 +145,28 @@ public class Problems2Impl implements Problems2 {
     @Override
     public boolean isPalindrome(int number) {
         int digits = 0;
-        while (number != 0) {
-            number /= 10;
+        int num = number;
+        boolean result = false;
+        while (num != 0) {
+            num /= 10;
             digits++;
         }
-        System.out.println(digits);
-        while (number > 9) {
-            if (number % 10 == number / pow(10, digits - 1)) {
-                number /= 10;
-            }
+        // System.out.println(digits);
+        while (digits > 1) {
+            digits--;
             System.out.println(number);
+            if ((number % 10) == (number / pow(10, digits))) {
+                result = true;
+                System.out.println(number);
+            } else {
+                return false;
+            }
+            number /= 10;
+           // System.out.println(result);
         }
-        return false;
+        // System.out.println(number);
+
+        return result;
     }
 
     @Override
