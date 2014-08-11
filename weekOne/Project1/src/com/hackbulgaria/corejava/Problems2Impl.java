@@ -3,7 +3,6 @@ package com.hackbulgaria.corejava;
 import java.util.Arrays;
 
 public class Problems2Impl implements Problems2 {
-
     @Override
     public boolean areAnagrams(String A, String B) {
         // TODO Auto-generated method stub
@@ -65,8 +64,13 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public long doubleFac(int n) {
-        // TODO Auto-generated method stub
-        return 0;
+        int number = n * (n - 1);
+        long result = 1;
+        for (int i = number; i > 1; i--) {
+            result = result * i;
+        }
+
+        return result;
     }
 
     @Override
@@ -208,8 +212,17 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public long kthFac(int k, int n) {
-        // TODO Auto-generated method stub
-        return 0;
+        long result = n;
+        if (k == 1) {
+            for (int i = 1; i < n; i++) {
+                result *= i;
+
+            }
+        } else {
+            System.out.println("You want too much from me");
+        }
+
+        return result;
     }
 
     @Override
@@ -280,8 +293,15 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public int sumOfNumbers(String input) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+        String numbers = input.replaceAll("[a-zA-Z _]+", "");
+        System.out.println(numbers);
+        int sum = 0;
+        String string;
+        for (int i = 0; i < numbers.length(); i++) {
+            string = "" + numbers.charAt(i);
+            sum += Integer.parseInt(string);
+        }
+        return sum;
 
+    }
 }

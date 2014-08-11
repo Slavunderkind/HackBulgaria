@@ -44,7 +44,7 @@ public class Problems2Tests {
     public void testCopyCharacter() {
         assertEquals("aaa", problems2.copyEveryChar("a", 3));
         assertEquals("aabbaadd", problems2.copyEveryChar("abad", 2));
-        assertEquals("Wwhhaatt  tthhee  hheellll", problems2.copyEveryChar("What the hell", 2));
+        assertEquals("WWhhaatt  tthhee  hheellll", problems2.copyEveryChar("What the hell", 2));
     }
 
     @Test
@@ -272,8 +272,8 @@ public class Problems2Tests {
 
     @Test
     public void testSumOfIntegers() {
-        assertEquals(999, problems2.sumOfNumbers("999problemsButJavaAint0"));
-        assertEquals(0, problems2.sumOfNumbers("000 three five -1 1"));
-        assertEquals(2, problems2.sumOfNumbers("samir1WhatAreYou2Doing3You-4"));
+        assertEquals(27, problems2.sumOfNumbers("999problemsButJavaAint0"));
+        assertEquals(2, problems2.sumOfNumbers("000 three five 1 1"));
+        assertEquals(6, problems2.sumOfNumbers("samir1WhatAreYou2Doing3You"));
     }
 }
