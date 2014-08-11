@@ -3,6 +3,7 @@ package com.hackbulgaria.corejava;
 import java.util.Arrays;
 
 public class Problems2Impl implements Problems2 {
+
     @Override
     public boolean areAnagrams(String A, String B) {
         // TODO Auto-generated method stub
@@ -158,8 +159,17 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public int[] histogram(short[][] image) {
-        // TODO Auto-generated method stub
-        return null;
+
+        int row = image.length;
+        int column = image[0].length;
+        int[] result = new int[row * column + 1];
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                result[image[i][j]]++;
+            }
+        }
+        return result;
+
     }
 
     @Override
@@ -234,8 +244,11 @@ public class Problems2Impl implements Problems2 {
 
     @Override
     public long maximalScalarSum(int[] a, int[] b) {
-        // TODO Auto-generated method stub
-        return 0;
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i] * b[i];
+        }
+        return sum;
     }
 
     @Override
