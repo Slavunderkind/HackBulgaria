@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="DebuggingFun/src"/>
+	<classpathentry kind="src" path="DebuggingFun/test"/>
+	<classpathentry kind="src" path="Exam1/src"/>
+	<classpathentry kind="src" path="Exam1/tests"/>
+	<classpathentry kind="src" path="First/src"/>
+	<classpathentry kind="src" path="Second/src"/>
+	<classpathentry kind="src" path="Third/src"/>
+	<classpathentry kind="src" path="week3/Car/src"/>
+	<classpathentry kind="src" path="week3/Pair/src"/>
+	<classpathentry kind="src" path="week3/Time/src"/>
+	<classpathentry kind="lib" path="DebuggingFun/libs/commons-io-2.4.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="week3/Time/bin"/>
+</classpath>
